@@ -2,31 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTrack Issue Reporter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>YouTrack Issue Reporter</h2>
-        <label for="projectId">Project:</label>
-        <select id="projectId">
-            <option value="">Loading projects...</option>
-        </select>
-        <button onclick="fetchIssues()">Fetch Issues</button>
-    <table id="issuesTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Summary</th>
-                <th>Description</th>
-                <th>Client Email</th>
-                <th>Recipient</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <button onclick="generateEmail()">Generate Email</button>
-    <div id="emailPreview"></div>
-
-    <script src="script.js"></script>
+    <div class="header">
+        <h2>YouTrack Issue Reporter</h2>
+    </div>
+    
+    <main class="container">
+        <div class="controls">
+            <label for="projectId">Project:</label>
+            <select id="projectId">
+                <option value="">Loading projects...</option>
+            </select>
+            <button onclick="fetchIssues()" id="fetchBtn" disabled>Fetch Issues</button>
+            <button onclick="downloadReport()" id="downloadBtn" disabled>Download HTML Report</button>
+        </div>
+        
+        <div id="status"></div>
+        
+        <table id="issuesTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Summary</th>
+                    <th>Action Type</th>
+                    <th>Action Stack</th>
+                    <th>Pillar</th>
+                    <th>Sprint Number</th>
+                    <th>Responsibility</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
 </body>
+<script src="script.js"></script>
 </html>
