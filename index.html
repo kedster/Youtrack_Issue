@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTrack Issue Reporter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>YouTrack Issue Reporter</h2>
+        <label for="projectId">Project:</label>
+        <select id="projectId">
+            <option value="">Loading projects...</option>
+        </select>
+        <button onclick="fetchIssues()">Fetch Issues</button>
+    <table id="issuesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Summary</th>
+                <th>Description</th>
+                <th>Client Email</th>
+                <th>Recipient</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <button onclick="generateEmail()">Generate Email</button>
+    <div id="emailPreview"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
